@@ -3,7 +3,7 @@
 
 rok = int(input("Wprowadź roku który chcesz sprawdzić: "))
 
-if rok % 4 == 0 and rok % 100 != 0: #and rok % 400 == 0: Dlaczgo ma byc podzielny przez 400? :-)
+if rok % 4 == 0 and rok % 100 != 0 or rok % 400 == 0:
     print(f"Tak, rok {rok} jest rokiem przestępnym! ")
 
 else:

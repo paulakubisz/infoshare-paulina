@@ -1,7 +1,7 @@
 # 4. oblicz ocenę na podstawie progu procentowego
 
 zdobyte_punkty = int(input("Ile zdobyłeś procet: "))
-if zdobyte_punkty > 95 and zdobyte_punkty < 101:
+if zdobyte_punkty > 95 and zdobyte_punkty <= 100:
     print("Gratulacje! Twoja ocena to celujący!")
 
 elif zdobyte_punkty > 86 and zdobyte_punkty < 96:
@@ -17,7 +17,7 @@ elif zdobyte_punkty > 50 and zdobyte_punkty < 36:
     print("Twoja ocena to dopuszczajacy!")
 
 elif zdobyte_punkty < 37:
-    print("Gratulacje! Twoja ocena to niedostateczny")
+    print("Słabo! Twoja ocena to niedostateczny")
 
 elif:
     print("Wprowadziles niepoprawną wartość!")
