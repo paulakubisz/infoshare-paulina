@@ -19,5 +19,5 @@ elif zdobyte_punkty > 50 and zdobyte_punkty < 36:
 elif zdobyte_punkty < 37:
     print("Słabo! Twoja ocena to niedostateczny")
 
-elif:
+else:
     print("Wprowadziles niepoprawną wartość!")
