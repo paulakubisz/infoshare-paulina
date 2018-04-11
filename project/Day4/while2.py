@@ -10,9 +10,9 @@ print(int(wejscie)** 2) # zamiana liczby do kwadratu
 
 #DRUGI SPOSOB
 
-for cos in wejscie:
-    if not cos.isdigit():
-        break
-
-print(int(wejscie) ** 2)  # zamiana liczby do kwadratu
+# for cos in wejscie:
+#     if not cos.isdigit():
+#         break
+#
+# print(int(wejscie) ** 2)  # zamiana liczby do kwadratu
 
