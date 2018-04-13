@@ -38,21 +38,21 @@ def find_product(p):
         print(f"I can't find {s} in magazyn.csv")
         query_yes_no('Do you want add more?')
 
-def update_data():
-
-    file = open('magazyn.csv', 'r+')
-    d = input("Do you want update a data? Press y or n!")
-
-    if d == "y":
-        for line in file:
-            product_for_delete = input("Enter product? ")
-            find_product(product_for_delete)
-
-
-
-
-    elif d == "n":
-        print("Thank You for using my magazin :) ")
+# def update_data():
+#
+#     file = open('magazyn.csv', 'r+')
+#     d = input("Do you want update a data? Press y or n!")
+#
+#     if d == "y":
+#         for line in file:
+#             product_for_delete = input("Enter product? ")
+#             find_product(product_for_delete)
+#
+#
+#
+#
+#     elif d == "n":
+#         print("Thank You for using my magazin :) ")
 
 
 
