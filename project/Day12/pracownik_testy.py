@@ -1,22 +1,25 @@
 from unittest import TestCase
-from dzien11.pracownik import Pracownik
+from project.dzien11.pracownik import Pracownik
 
 class TestsPracownik(TestCase):
 
     def setUp(self):
-        imie = "adam"
-        stanowisko = "kierowca"
-        pensja = 2000
-        self.pracownik = Pracownik(imie,pensja,stanowisko)
+        self.imie = 'adam'
+        self.stanowisko = 'kierowca'
+        self.pensja = 2000
+        self.pracownik = Pracownik(self.imie,
+                                   self.pensja,
+                                   self.stanowisko)
 
     def test_init(self):
-        # arrange
-        # act
-        #assert
-        imie_expected = imie.capitalize()
-        self.assertEqual(imie_expected, pracownik.imie)
-        stan_exp = stanowisko
-        self.assertEqual(stan_exp, pracownik.stanowisko)
+        # assert
+        imie_expected = self.imie.capitalize()
+        self.assertEqual(imie_expected, self.pracownik.imie)
+        stan_exp = self.stanowisko
+        self.assertEqual(stan_exp, self.pracownik.stanowisko)
 
 
-    def test_pensja(self):
+    def test_pensja_get(self):
+        pensja_exp = f'Pensja: {self.pensja}'
+
+        self.assertEqual(pensja_exp, self.pracownik.pensja)
