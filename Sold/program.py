@@ -1,8 +1,3 @@
-from Sold.yesornot import enter_product, query_yes_no, find_product, update_data
+from Sold.yesornot import menu ,enter_product, query_yes_no, find_product, delete_product
 
-
-enter_product()
-
-query_yes_no("Do you want add more? ")
-
-find_product("What are you looking for? ")
+menu()

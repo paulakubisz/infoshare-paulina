@@ -1,4 +1,34 @@
 
+
+def menu():
+    print("""
+        1 - Enter product
+        2 - Find product
+        3 - Delete product
+        4 - Exit
+    """)
+    choice = input("Chose element from menu and press Enter: ")
+    if choice == "1":
+        print("\nHello, you can add new products!  \n")
+        enter_product()
+    elif choice == "2":
+        print("\nHello, you can add find products!  \n")
+        find_product("What are you looking for? ")
+    elif choice == "3":
+        print("\nHello, you can update data!  \n")
+        delete_product()
+    elif choice == "4":
+        print("\n Goodbay!")
+
+def back_menu():
+
+    back = input("Thank you for adding new products. Press 0 and back to menu. \n")
+    if back == "0":
+        menu()
+    else:
+        print("Wrong answer!")
+
+
 def enter_product():
     """
     Enter name and amount of product.
@@ -17,6 +47,8 @@ def enter_product():
 
     with open ("magazyn.csv","a") as file:
         file.writelines(db)
+
+    back_menu()
 
 
 def find_product(p):
@@ -38,21 +70,42 @@ def find_product(p):
         print(f"I can't find {s} in magazyn.csv")
         query_yes_no('Do you want add more?')
 
-# def update_data():
-#
-#     file = open('magazyn.csv', 'r+')
-#     d = input("Do you want update a data? Press y or n!")
-#
-#     if d == "y":
-#         for line in file:
-#             product_for_delete = input("Enter product? ")
-#             find_product(product_for_delete)
-#
-#
-#
-#
-#     elif d == "n":
-#         print("Thank You for using my magazin :) ")
+    back_menu()
+
+def delete_product() -> object:
+
+    import re
+
+    # file = open("magazyn.csv").readlines()
+    # to_delete = open('to_delete', 'w')
+    #
+    # question = input("Do you want update a data? Press y or n!")
+    #
+    # if question == "y":
+    #
+    #     for s in file:
+    #         d = input("Enter product: ")
+    #         to_delete.write(s.replace(d, ""))
+    #         break
+    #     to_delete.close()
+    #
+    # elif question == "n":
+    #     print("Thank You for using my magazin :) ")
+
+
+    file = open("magazyn.csv").readlines()
+
+    question = input("Do you want update a data? Press y or n!")
+
+    if question == "y":
+
+        for line in file:
+            to_delete = re.search(question, line)
+            to_delete.group()
+
+
+
+
 
 
 
