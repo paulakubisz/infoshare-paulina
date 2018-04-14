@@ -20,9 +20,9 @@ def menu():
     elif choice == "4":
         print("\n Goodbay!")
 
-def back_menu():
+def back_menu(p):
 
-    back = input("Thank you for adding new products. Press 0 and back to menu. \n")
+    back = input(p)
     if back == "0":
         menu()
     else:
@@ -48,7 +48,7 @@ def enter_product():
     with open ("magazyn.csv","a") as file:
         file.writelines(db)
 
-    back_menu()
+    back_menu("Thank you for adding new products. Press 0 and back to menu. \n")
 
 
 def find_product(p):
@@ -70,7 +70,7 @@ def find_product(p):
         print(f"I can't find {s} in magazyn.csv")
         query_yes_no('Do you want add more?')
 
-    back_menu()
+    back_menu("Great! \n")
 
 def delete_product() -> object:
 
@@ -88,7 +88,7 @@ def delete_product() -> object:
     file_write.close()
 
 
-    menu()
+    back_menu("Thank you for update data. Press 0 and back to menu. \n)
 
 def query_yes_no(q) -> object:
     while True:
