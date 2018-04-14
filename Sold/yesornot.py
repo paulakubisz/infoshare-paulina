@@ -74,41 +74,21 @@ def find_product(p):
 
 def delete_product() -> object:
 
-    import re
 
-    # file = open("magazyn.csv").readlines()
-    # to_delete = open('to_delete', 'w')
-    #
-    # question = input("Do you want update a data? Press y or n!")
-    #
-    # if question == "y":
-    #
-    #     for s in file:
-    #         d = input("Enter product: ")
-    #         to_delete.write(s.replace(d, ""))
-    #         break
-    #     to_delete.close()
-    #
-    # elif question == "n":
-    #     print("Thank You for using my magazin :) ")
+    file_read = open('magazyn.csv', 'r+')
+    file = file_read.readlines()
+
+    delete_product = input('delete product: ')
+    file.remove(delete_product)
+
+    file_write = open('magazyn.csv', 'r+')
+
+    for line in file:
+        file_write.write(line)
+    file_write.close()
 
 
-    file = open("magazyn.csv").readlines()
-
-    question = input("Do you want update a data? Press y or n!")
-
-    if question == "y":
-
-        for line in file:
-            to_delete = re.search(question, line)
-            to_delete.group()
-
-
-
-
-
-
-
+    menu()
 
 def query_yes_no(q) -> object:
     while True:
