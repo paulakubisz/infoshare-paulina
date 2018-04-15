@@ -73,22 +73,23 @@ def find_product(p):
     back_menu("Great! \n")
 
 def delete_product() -> object:
+    import re
 
+    db = []
 
     file_read = open('magazyn.csv', 'r+')
-    file = file_read.readlines()
 
-    delete_product = input('delete product: ')
-    file.remove(delete_product)
+    for line in file_read:
+        file_read.readlines()
+        product_to_delete= input('delete product: ')
+        re.match(product_to_delete, line)
+        b = product_to_delete.replace(product_to_delete, " " )
+        db.append(b)
 
-    file_write = open('magazyn.csv', 'r+')
+    with open ("magazyn.csv","a") as file:
+        file.writelines(db)
 
-    for line in file:
-        file_write.write(line)
-    file_write.close()
-
-
-    back_menu("Thank you for update data. Press 0 and back to menu. \n)
+    back_menu("Thank you. Press 0 and back to menu. \n")
 
 def query_yes_no(q) -> object:
     while True:
