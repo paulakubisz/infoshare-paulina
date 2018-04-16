@@ -79,17 +79,17 @@ def delete_product() -> object:
 
     file_read = open('magazyn.csv', 'r+')
 
+    product_to_delete = input('Enter product wjich will be delete: ')
+
     for line in file_read:
-        file_read.readlines()
-        product_to_delete= input('delete product: ')
-        re.match(product_to_delete, line)
+        re.search(product_to_delete, line)
         b = product_to_delete.replace(product_to_delete, " " )
         db.append(b)
 
-    with open ("magazyn.csv","a") as file:
+    with open ("magazyn.csv","r+") as file:
         file.writelines(db)
 
-    back_menu("Thank you. Press 0 and back to menu. \n")
+    # back_menu("Thank you. Press 0 and back to menu. \n")
 
 def query_yes_no(q) -> object:
     while True:
